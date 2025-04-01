@@ -5,6 +5,6 @@
 
 - Project Name: Airline-Booking-App
 - Version: 1.0
-- Authors (s): Gerald Narisma  
-Kitz Saberon  
-John Michael Catapia  
+- Authors: Gerald Narisma, Kitz Saberon, John Michael Catapia
+
+2. ## Table of Contents
