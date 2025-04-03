@@ -8,3 +8,5 @@
 - Authors: Gerald Narisma, Kitz Saberon, John Michael Catapia
 
 2. ## Table of Contents
+
+3. ## Introduction
