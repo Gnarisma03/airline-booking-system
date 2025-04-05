@@ -148,7 +148,8 @@
   - All user data, bookings, and tickets must be securely stored and retrievable by authorized users only.
 
 - **ERD**:
-  - Add your ERD diagram image or link here (e.g., `![ERD Diagram](path/to/erd.png)`)
+  - [View ERD Diagram](https://app.diagrams.net/#G1dhoeZgBwm6gxpbuvow-XHJuoxpuBmcgT#%7B%22pageId%22%3A%22F0WhinVh_l8tOQ3vHs6p%22%7D)
+
 
 ## 10. External Interface Requirements
 - **User Interfaces**: 
