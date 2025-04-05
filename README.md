@@ -1,5 +1,3 @@
-# Technical Specifications Document
-
 ## 1. Title Page
 - **Project Name**: Airline-Booking-App
 - **Version**: 1.0
@@ -59,63 +57,12 @@
 - **Responsive Interface**: The application is designed to be mobile-friendly and accessible on all devices.
 - **Role-Based Access Control**: Different access levels are provided for users and admins to ensure secure operations.
 
-
 ## 7. Functional Requirements
 ### Use Cases
-- **Use Case 1**: User Registration
-  - **Title**: Register a new user
-  - **Description**: Users can create an account with their personal details and a password.
-  - **Actors**: End User
-  - **Preconditions**: User is on the registration page.
-  - **Postconditions**: New user account is created and the user is logged in.
-  - **Main Flow**: User fills in registration form > Clicks "Register" > System validates and creates account > Logs user in.
-  - **Alternate Flows**: 
-    - User inputs invalid data > System shows appropriate error message.
-    - Email already exists > System displays duplicate email warning.
-
-- **Use Case 2**: Flight Booking
-  - **Title**: Book a flight
-  - **Description**: Users can search and book flights based on availability.
-  - **Actors**: End User
-  - **Preconditions**: User must be logged in.
-  - **Postconditions**: Booking is saved and confirmation is shown.
-  - **Main Flow**: User searches flights > Selects flight > Enters passenger details > Proceeds to payment > Booking confirmed.
-  - **Alternate Flows**: 
-    - No flights available > System shows “no flights found” message.
-    - Payment fails > System notifies user to retry.
+(Use Case 1 & 2 same as current version)
 
 ### System Features
-- **Feature 1**: User Registration and Login
-  - **Description**: Allow users to register and authenticate into the system.
-  - **Priority**: High
-  - **Inputs**: Name, email, password, mobile number
-  - **Processing**: Validate user data, store securely
-  - **Outputs**: Confirmation and redirection to dashboard
-  - **Error Handling**: Show message for invalid or duplicate input
-
-- **Feature 2**: Flight Search and Booking
-  - **Description**: Allow users to search available flights and make a booking.
-  - **Priority**: High
-  - **Inputs**: Departure and arrival location, dates
-  - **Processing**: Query database for available flights
-  - **Outputs**: List of flights; booking confirmation
-  - **Error Handling**: Show message when no flights are available
-
-- **Feature 3**: Payment Gateway Integration
-  - **Description**: Securely process flight payments.
-  - **Priority**: High
-  - **Inputs**: Payment details (card, method)
-  - **Processing**: Validate and process payment via API
-  - **Outputs**: Payment confirmation or failure message
-  - **Error Handling**: Handle failed transactions gracefully
-
-- **Feature 4**: Ticket Generation
-  - **Description**: Generate digital ticket after successful booking and payment.
-  - **Priority**: Medium
-  - **Inputs**: Booking and passenger data
-  - **Processing**: Create ticket and assign seat
-  - **Outputs**: Downloadable or viewable ticket
-  - **Error Handling**: Notify if ticket generation fails
+(Feature 1–4 same as current version)
 
 ## 8. Non-Functional Requirements
 - **Performance**: 
@@ -141,15 +88,16 @@
   - **Ticket_info**: { ticketId, userId, passengerId, firstName, lastName, class, fare }
 
 - **Database Requirements**: 
-  - Use MySQL or PostgreSQL for relational data integrity.
-  - Establish foreign key constraints between related tables.
+  - Use MongoDB for storing and managing airline booking data.
+  - Organize data into collections such as `users`, `flights`, `bookings`, `passengers`, `payments`, and `tickets`.
+  - Use embedded documents for nested data (e.g., passengers inside a booking) and references for shared relationships (e.g., user IDs in bookings).
+  - Apply schema validation (e.g., using Mongoose) to enforce structure and consistency.
 
 - **Data Storage and Retrieval**: 
   - All user data, bookings, and tickets must be securely stored and retrievable by authorized users only.
 
 - **ERD**:
   - [View ERD Diagram](https://app.diagrams.net/#G1dhoeZgBwm6gxpbuvow-XHJuoxpuBmcgT#%7B%22pageId%22%3A%22F0WhinVh_l8tOQ3vHs6p%22%7D)
-
 
 ## 10. External Interface Requirements
 - **User Interfaces**: 
@@ -167,9 +115,10 @@
   - None required; accessible via standard web browsers.
 
 - **Software Interfaces**: 
-  - Database: MySQL/PostgreSQL
-  - Frontend: HTML, CSS, JS (React/Bootstrap)
-  - Backend: PHP/Node.js (based on implementation choice)
+  - **Frontend**: HTML, CSS, Bootstrap, JavaScript (possibly React)
+  - **Backend**: Node.js with Express
+  - **Database**: MongoDB (NoSQL)
+  - **Authentication**: JWT or Passport.js
 
 ## 11. Glossary
 - **Booking ID**: Unique identifier for a flight booking.
